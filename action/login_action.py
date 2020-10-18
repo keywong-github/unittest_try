@@ -1,4 +1,3 @@
-
 from common.base_page import BasePage
 from time import sleep
 
