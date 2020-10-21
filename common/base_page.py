@@ -16,6 +16,11 @@ class BasePage(object):
         self.driver.get(self.url)
         self.driver.maximize_window()
 
+    def locator(self,*locator):
+        el=self.driver.find_element(*locator)
+        return el
+
+
 
     def quit(self):
         self.driver.quit()
