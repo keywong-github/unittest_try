@@ -23,3 +23,6 @@ class Test_Login(unittest.TestCase):
 
 if __name__=='__main__':
     unittest.main()
+
+
+#缺少日志，缺少报告，缺少发邮件
