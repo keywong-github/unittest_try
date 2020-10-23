@@ -5,6 +5,7 @@ sys.path.append(dirname(dirname(abspath(__file__))))
 from action.login_action import LoginAction
 from ddt import ddt,data,unpack
 from selenium import webdriver
+from common.ReadData import ReadData1
 
 @ddt
 class Test_Login(unittest.TestCase):
@@ -14,9 +15,9 @@ class Test_Login(unittest.TestCase):
     def tearDown(self):
         self.ts.quit()
 
-    @data("https://www.baidu.com/")
-    def test_login_baidu(self,url):
-        self.ts=LoginAction(self.driver,url)
+    @data(*ReadData1().get_excel_data())
+    def test_login_baidu(self,data):
+        self.ts=LoginAction(self.driver,data['url'])
         self.ts.login()
 
 if __name__=='__main__':

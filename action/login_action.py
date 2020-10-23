@@ -1,4 +1,8 @@
+import sys
+from os.path import abspath,dirname
+sys.path.append(dirname(dirname(abspath(__file__))))
 from common.base_page import BasePage
+from common.ReadData import ReadData1
 from time import sleep
 from selenium.webdriver.common.by import By
 
@@ -9,8 +13,8 @@ class LoginAction(BasePage):
     login_password=(By.NAME,'password')
     login_enter=(By.ID,'TANGRAM__PSP_11__submit')
 
-    username='luojingnihao2'
-    password='q907740164'
+    username=ReadData1().get_excel_data()[0]['username']
+    password=ReadData1().get_excel_data()[0]['password']
 
     def login_click_action(self):
         #self.page.login_click.click()
