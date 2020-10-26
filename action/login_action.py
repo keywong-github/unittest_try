@@ -38,13 +38,13 @@ class LoginAction(BasePage):
 
     def login(self):
         self.open()
-        sleep(2)
+        sleep(1)
         self.login_click_action()
-        sleep(2)
+        sleep(1)
         self.login_exchange_action()
-        sleep(2)
+        sleep(1)
         self.login_username_action(self.username)
         self.login_password_action(self.password)
         sleep(1)
         self.login_enter_action()
-        sleep(2)
+        sleep(1)

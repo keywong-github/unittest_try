@@ -2,12 +2,14 @@ import unittest
 import time
 from common.Write_Report import Write_Report1
 from common.Send_Email import Send_Email1
+from common.Log import Logger
 
 if __name__=='__main__':
     test_dir='./test_case'
     suit=unittest.defaultTestLoader.discover(test_dir,'test*.py')
 
     html_report=Write_Report1().write_report(suit)
+    Logger('my_name').get_log().debug("测试通过~")
     #发邮件开关
     # Send_Email1().send_mail(html_report)
 
